@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
+import ShouldComponentUpdate from  './components/ShouldComponentUpdate';
+import Header from './components/Header';
+import ComponentDidMount from './components/ComponentDidMount';
+import ComponentDidUpdate from './components/ComponentDidUpdate';
+import ComponentWillUnmount from './components/ComponentWillUnmount';
+import Home from './components/Home';
+import GetDerivedStateFromProps from './components/GetDerivedStateFromProps';
+
 import { Switch , Route } from 'react-router-dom' ;
 
-import Header from './Header';
+
 
 class App extends Component {
  
@@ -12,7 +20,11 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component = {Home} />
-            <Route exact path="/stuff" component = {Stuff} />
+            <Route path="/componentdidmount" component = {ComponentDidMount} />
+            <Route path="/componentdidupdate" component = {ComponentDidUpdate} />
+            <Route path="/componentwillunmount" component = {ComponentWillUnmount} />
+            <Route path="/shouldcomponentupdate" component = {ShouldComponentUpdate} />
+            <Route path="/getderivedstatefromprops" component = {GetDerivedStateFromProps} />
           </Switch>
         </div>  
 
@@ -22,13 +34,5 @@ class App extends Component {
 
   }
 
-
-const Home = () => (
-    <div> Home </div>
-  )
-  
-const Stuff = () => (
-    <div> STUFF </div>
-    )
 
 export default App;
