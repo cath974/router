@@ -8,18 +8,16 @@ class ComponentDidUpdate extends React.Component {
             count: 0,
             color: ""
         }
-        this.increment = this.increment.bind(this)
        
     }
     
-    increment() {
-        this.setState(prevState => {
-            return {
-                count: prevState.count + 1
-            }
-        })
-    }
-    
+    increment = () => {
+        let counterValue = this.state.count;
+        counterValue += 1;
+        this.setState ({count:counterValue})
+      }
+   
+        
     componentDidUpdate(prevProps, prevState) {
         if(prevState.count !== this.state.count) {
             const newColor = randomcolor()

@@ -7,12 +7,15 @@ class GetDerivedStateFromProps extends React.Component {
     }
     static getDerivedStateFromProps(props, state) {
         console.log ('getDerivedStateFromProps is called before the render')
-        return {favoritecolor: props.favcol };
+        return {favoritecolor: "blue" };
     }
     render() {
         console.log ('render')
         return (
-        <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+        <div>
+            <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+            <h3>open your console</h3>
+        </div>
       );
     }
   }

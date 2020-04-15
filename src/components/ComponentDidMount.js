@@ -20,12 +20,10 @@ class ComponentDidMount extends React.Component {
     });
   }
   
-  nextValue() {
-    this.setState((prevState, props) => {
-      return {
-        currentNumber: prevState.currentNumber + 1
-      };
-    });
+  nextValue = () => {
+    let counterValue = this.state.currentNumber;
+    counterValue += 1;
+    this.setState ({currentNumber:counterValue})
   }
   
   render() {
@@ -34,8 +32,9 @@ class ComponentDidMount extends React.Component {
       <div className="number-viewer">
          <h1>Component did Mount</h1>
         <p>{this.state.quote}</p>
-        <button onClick={() => this.nextValue()}>Next Value</button>
+        <button onClick={this.nextValue}>Next Value</button>
         <p>Current Value: {this.state.currentNumber}</p>
+        <h3>open your console</h3>
       </div>
     );
   }
