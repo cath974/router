@@ -10,7 +10,7 @@ class ComponentDidMount extends React.Component {
     };
   }
  
-  componentDidMount() {
+   componentDidMount() {
     console.log ('componentDidMount')
     axios
     .get("https://thesimpsonsquoteapi.glitch.me/quotes")
@@ -31,9 +31,9 @@ class ComponentDidMount extends React.Component {
     return (
       <div className="number-viewer">
          <h1>Component did Mount</h1>
-        <p>{this.state.quote}</p>
+        <p>{this.state.quote && this.state.quote}</p>
         <button onClick={this.nextValue}>Next Value</button>
-        <p>Current Value: {this.state.currentNumber}</p>
+        <p>Current Value: {this.state.currentNumber && this.state.currentNumber}</p>
         <h3>open your console</h3>
       </div>
     );
